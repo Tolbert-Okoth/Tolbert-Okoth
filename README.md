@@ -14,12 +14,15 @@ I like problems where getting the numbers right actually matters: a child's brea
 | [**TunzaCare**](https://github.com/Tolbert-Okoth/TunzaCare) | Offline-first companion for adults managing hypertension or type 2 diabetes. Every clinical cutoff traced to ISH 2020 / ADA 2024 / Kenya MoH guidelines; English + Kiswahili; 23/23 tests covering clinical boundaries and privacy rules. | Vanilla JS, Node test runner |
 | [**Afya-Pulse**](https://github.com/Tolbert-Okoth/afya-pulse) | Real-time triage and outbreak dashboard. An LLM sorts symptom reports (English, Swahili, Sheng) into red/yellow/green; doctors see cases live. | React, Node/Express, Socket.io, Flask, PostgreSQL |
 
-### Quantitative research (gold / XAUUSD)
+### Quantitative research & tooling
 
 | Project | What it shows |
 |---|---|
-| [**Hurst/DFA Regime Classifier**](https://github.com/Tolbert-Okoth/Gold--hurst--daily-classifier) | Pre-registered test of whether Hurst exponents predict gold returns, on 16 years of data. Passed estimator calibration, then **killed** by permutation nulls, regime splits and outlier trimming. A worked example of how I stop myself fooling myself. |
-| [**Market Profile Engine**](https://github.com/Tolbert-Okoth/market-profile-vsa-engine) | Auction Market Theory (TPO, value area, Dalton day types) built from scratch, with a causal backtester, spread + slippage modelling and purged walk-forward validation. |
+| [**propsim**](https://github.com/Tolbert-Okoth/propfirm-pass-sim) | Monte Carlo simulator for 17 prop-firm challenges (numba, 3,000 paths in about 0.1 s). Finding: a strategy with **zero edge passes FTMO about 29% of the time** at sensible risk, against roughly 10% reported for real traders. Checked against the optional stopping theorem. |
+| [**dukafetch**](https://github.com/Tolbert-Okoth/dukascopy-tools) | Resumable downloader and verified decoder for free Dukascopy tick data. Shows that an optimistic bar backtest can turn a losing strategy (−0.47 R per trade on ticks) into a "winning" one (+0.12 R). |
+| [**vprofile**](https://github.com/Tolbert-Okoth/volume-profile-toolkit) | Look-ahead-free volume profiles. Validated against ~800,000 COMEX gold trades: free 5-minute bars reproduce the tick profile (0.987 median shape correlation), but candle-colour "delta" is noise. |
+| [**RV15 Forecasting Engine**](https://github.com/Tolbert-Okoth/rv15-forecasting-engine) | 15-minute realised-variance forecasting with an append-only forecast ledger. A HAR model improved QLIKE over EWMA by 23% across 68,291 forecasts. |
+| [**Hurst/DFA Regime Classifier**](https://github.com/Tolbert-Okoth/Gold--hurst--daily-classifier) | Pre-registered test of whether Hurst exponents predict gold returns, on 16 years of data. Passed estimator calibration, then **killed** by permutation nulls, regime splits and outlier trimming. |
 
 **How I do research:** write the hypothesis and kill criteria first, calibrate on synthetic data, test against shuffled and random-walk nulls, check every regime, and report results that fail.
 
@@ -28,7 +31,7 @@ I like problems where getting the numbers right actually matters: a child's brea
 ### Tools
 
 **Languages:** Python · JavaScript · SQL
-**Data & ML:** pandas · NumPy · PyTorch · scikit-learn · Optuna · statistical testing
+**Data & ML:** pandas · NumPy · numba · PyTorch · XGBoost · Optuna · Monte Carlo simulation · statistical testing
 **Web:** React · Node.js/Express · FastAPI · Flask · PostgreSQL · Firebase · Supabase
 **Deploy:** Vercel · Render · Neon
 
